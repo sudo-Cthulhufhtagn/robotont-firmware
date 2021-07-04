@@ -82,6 +82,13 @@ void processPacket(const std::string& packet)
     cmd_timer.reset();
   }
 
+  // Replies with a version of firmware from the current commit(./version should be ran first)
+  if (cmd[0] == "VER")
+  {
+    serial_pc.printf("Current version: 2fb002d1b1ef17b05601c19ea8e1efd7db33e5ea\r\n");
+  }
+
+
   // RS - Set motor speeds based on robot velocities. We use ROS coordinate convention: x-forward,
   // y-left, theta-CCW rotation.
   /* RS:robot_speed_x(m/s):robot_speed_y(m/s):robot_speed_theta(rad/s) */

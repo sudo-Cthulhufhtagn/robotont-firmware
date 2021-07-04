@@ -1,0 +1,1 @@
+sed -i "s/version:.*\\\r/version: $(git rev-parse HEAD)\\\r/" src/main.cpp
